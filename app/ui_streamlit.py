@@ -10,7 +10,7 @@ from app.rag_pipeline import load_vectorstore_from_disk, build_chain
 
 st.title("🤖 Asistente  GenIA")
 
-question = st.text_input("Escribe tu pregunta sobre beneficios o políticas laborales:")
+question = st.text_input("Escribe tu pregunta:")
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
