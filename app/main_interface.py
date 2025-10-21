@@ -18,14 +18,14 @@ vectordb = load_vectorstore_from_disk()
 chain = build_chain(vectordb)
 
 if modo == "🤖 Chatbot":
-    st.title("🤖 Asistente de Recursos Humanos")
+    st.title("🤖 Asistente")
     pregunta = st.text_input("¿Qué deseas consultar?")
 
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
 
     if pregunta:
-        with st.spinner("Consultando documentos..."):
+        with st.spinner("Dejame revisos los docs.."):
             result = chain.invoke({"question": pregunta, "chat_history": st.session_state.chat_history})
             st.session_state.chat_history.append((pregunta, result["answer"]))
 
